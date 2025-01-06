@@ -73,7 +73,7 @@ class mhs extends CI_Controller
 		$data['kls'] = $this->Model_kls->show_kelas();
 		$data['sesi'] = $this->Model_sesi->show_sesi();
 		$data['mhs'] = $this->Model_mhs->getmhsid($id);
-		$data['mahasiswa'] = $this->Model_mhs->last_mhs();
+		$data['mahasiswa'] = $this->Model_hasil->last_mhs();
 
 		$this->form_validation->set_rules('nrp', 'NRP', 'trim|required');
 		$this->form_validation->set_rules('nama_mhs', 'Nama Mahasiswa', 'trim|required');

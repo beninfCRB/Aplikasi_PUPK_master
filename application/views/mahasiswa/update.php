@@ -32,7 +32,7 @@
                             <div class="form-group">
                                 <label for="nama_smt">Semester</label>
                                 <select class="form-control" id="nama_smt" name="nama_smt">
-                                    <option value="" selected disabled>Pilih Semester</option>
+                                    <option value="" disabled>Pilih Semester</option>
                                     <?php foreach ($smt as $s) : ?>
                                         <option value="<?= $s['id_smt']; ?>"><?= $s['nama_smt']; ?></option>
                                     <?php endforeach; ?>
@@ -42,7 +42,7 @@
                             <div class="form-group">
                                 <label for="nama_kls">Kelas</label>
                                 <select class="form-control" id="nama_kls" name="nama_kls">
-                                    <option value="" selected disabled>Pilih Kelas</option>
+                                    <option value="" disabled>Pilih Kelas</option>
                                     <?php foreach ($kls as $k) : ?>
                                         <option value="<?= $k['id_kls']; ?>"><?= $k['nama_kls']; ?></option>
                                     <?php endforeach; ?>
@@ -52,7 +52,7 @@
                             <div class="form-group">
                                 <label for="nama_sesi">Sesi</label>
                                 <select class="form-control" id="nama_sesi" name="nama_sesi">
-                                    <option value="" selected disabled>Pilih Semester</option>
+                                    <option value="" disabled>Pilih Semester</option>
                                     <?php foreach ($sesi as $i) : ?>
                                         <option value="<?= $i['id_sesi']; ?>"><?= $i['nama_sesi']; ?></option>
                                     <?php endforeach; ?>

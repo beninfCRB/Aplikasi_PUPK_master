@@ -42,7 +42,7 @@
                             <div class="form-group">
                                 <soalel for="status">Status</soalel>
                                 <select class="form-control" type="text" name="status" id="status">
-                                    <option selected disabled value="#"><?= $token['status']; ?></option>
+                                    <option disabled value="#"><?= $token['status']; ?></option>
                                     <option value="aktif">Aktif</option>
                                     <option value="nonaktif">Nonaktif</option>
                                 </select>
