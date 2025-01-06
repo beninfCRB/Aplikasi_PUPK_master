@@ -19,7 +19,7 @@ class folder extends CI_Controller
         }
 
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
-        $data['title'] = 'Folder';
+        $data['title'] = 'Data Folder';
         $data['bc'] = 'Ujian Praktikum';
         $data['folder'] = $this->model_folder->show_folder();
 

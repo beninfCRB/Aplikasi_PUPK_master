@@ -1,5 +1,5 @@
 <?php
-$show = ['', ''];
+$show = ['', '',''];
 $menu = ['', '', '', '', '', '', '', '', '', '', '', ''];
 
 if ($title == 'Dashboard') {
@@ -20,16 +20,21 @@ if ($title == 'Dashboard') {
     $menu[5] = 'active';
 } else if ($title == 'Laboratorium') {
     $menu[6] = 'active';
+    $show[1] = 'show';
 } else if ($title == 'Jawaban') {
     $menu[7] = 'active';
 } else if ($title == 'Token') {
     $menu[8] = 'active';
+    $show[2] = 'show';
 } else if ($title == 'Mata Kuliah') {
     $menu[9] = 'active';
+    $show[1] = 'show';
 } else if ($title == 'Data Folder') {
     $menu[10] = 'active';
+    $show[2] = 'show';
 } else if ($title == 'Ip Address') {
     $menu[11] = 'active';
+    $show[2] = 'show';
 }
 
 
@@ -52,7 +57,7 @@ if ($title == 'Dashboard') {
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>
-                    <div class="sb-sidenav-menu-heading <?= $menu[1] . $menu[2] . $menu[3] . $menu[4]; ?>">Mahasiswa</div>
+                    <div class="sb-sidenav-menu-heading <?= $menu[6] . $menu[9]; ?>">Ujian Praktikum</div>
                     <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseMahasiswa" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                         Data Mahasiswa
@@ -66,39 +71,37 @@ if ($title == 'Dashboard') {
                             <a class="nav-link <?= $menu[4]; ?>" href="<?= base_url('sesi/showdata_sesi') ?>">Sesi</a>
                         </nav>
                     </div>
-                    <div class="sb-sidenav-menu-heading">Bank Soal</div>
+                    <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapsePoint" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fas fa-bookmark"></i></div>
+                        Data Mata Kuliah & Area
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse <?= $show[1]; ?>" id="collapsePoint" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link <?= $menu[6]; ?>" href="<?= base_url('lab/showdata_lab') ?>">Laboratorium</a>
+                            <a class="nav-link <?= $menu[9]; ?>" href="<?= base_url('matkul/showdata_matkul') ?>">Mata Kuliah</a>
+                        </nav>
+                    </div>
+                    <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseSetting" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
+                        Pengaturan
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse <?= $show[2]; ?>" id="collapseSetting" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link <?= $menu[8]; ?>" href="<?= base_url('token/showdata_token') ?>">Token</a>
+                            <a class="nav-link <?= $menu[10]; ?>" href="<?= base_url('folder/showdata_folder') ?>">Folder Jawaban</a>
+                            <a class="nav-link <?= $menu[11]; ?>" href="<?= base_url('ip/showdata_ip') ?>">IP Adress Current</a>
+                        </nav>
+                    </div>
+                    <div class="sb-sidenav-menu-heading">Bank Soal & Jawaban</div>
                     <a class="nav-link <?= $menu[5]; ?>" href="<?= base_url('soal/showdata_soal') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                         Data Soal
                     </a>
-                    <div class="sb-sidenav-menu-heading">Ujian Praktikum</div>
-                    <a class="nav-link <?= $menu[6]; ?>" href="<?= base_url('lab/showdata_lab') ?>">
-                        <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                        Data Laboratorium
-                    </a>
                     <a class="nav-link <?= $menu[7]; ?>" href="<?= base_url('hasil/showdata_hasil') ?>">
                         <div class="sb-nav-link-icon"><i class="far fa-paper-plane"></i></div>
                         Data Jawaban
-                    </a>
-                    <a class="nav-link <?= $menu[8]; ?>" href="<?= base_url('token/showdata_token') ?>">
-                        <div class="sb-nav-link-icon"><i class="fas fa-key"></i></div>
-                        Data Token
-                    </a>
-                    <a class="nav-link <?= $menu[9]; ?>" href="<?= base_url('matkul/showdata_matkul') ?>">
-                        <div class="sb-nav-link-icon"><i class="fas fa-sticky-note"></i></div>
-                        Data Mata Kuliah
-                    </a>
-                    <a class="nav-link <?= $menu[10]; ?>" href="<?= base_url('folder/showdata_folder') ?>">
-                        <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
-                        Data Folder
-                    </a>
-                    <a class="nav-link <?= $menu[11]; ?>" href="<?= base_url('ip/showdata_ip') ?>">
-                        <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
-                        Ip Adress
-                    </a>
-                    <a class="nav-link" href="<?= base_url('login/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
-                        <i class="fas fa-fw fa-sign-out-alt"></i>
-                        <span>Logout</span>
                     </a>
                 </div>
             </div>
