@@ -5,6 +5,7 @@
     <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
     <!-- Navbar-->
     <ul class="navbar-nav ml-auto">
+        <a class="nav-link" href="<?= base_url('countdown'); ?>" target="_blank" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-stopwatch"></i> Token Countdown </a>
         <a class="nav-link" href="<?= base_url('mahasiswa'); ?>" target="_blank" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-eye"></i> Lihat </a>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>

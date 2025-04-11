@@ -2,6 +2,11 @@
 
 class model_token extends CI_model
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function count_token()
     {
         $query = "SELECT * FROM token";
@@ -32,18 +37,21 @@ class model_token extends CI_model
         }
     }
 
-    public function getaktif()
+    public function getAllAktif()
     {
         $date = date('Y-m-d');
-        $query = "SELECT * FROM token WHERE status = 'aktif' AND tanggal = '$date'";
+        $time = date('H:i');
+        $query = "SELECT * FROM token WHERE status = 'aktif' AND tanggal = '$date' AND mulai <= '$time' AND akhir >= '$time' ORDER BY mulai ASC";
         return $this->db->query($query)->row_array();
     }
 
-    public function __construct()
+    public function getaktif()
     {
-        parent::__construct();
+        $date = date('Y-m-d');
+        $time = date('H:i');
+        $query = "SELECT * FROM token WHERE status = 'aktif' AND tanggal = '$date' AND mulai <= '$time' AND akhir >= '$time' ORDER BY mulai ASC";
+        return $this->db->query($query)->row_array();
     }
-
 
     public function show_token()
     {
@@ -88,6 +96,15 @@ class model_token extends CI_model
             'status' => $this->input->post('status'),
         ];
 
+        $this->db->where('id_token', $kode);
+        $this->db->update('token', $data);
+    }
+
+    public function updateAutoToken($kode)
+    {
+        $data = [
+            'status' => 'nonaktif',
+        ];
         $this->db->where('id_token', $kode);
         $this->db->update('token', $data);
     }

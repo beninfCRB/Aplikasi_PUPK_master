@@ -21,6 +21,14 @@ class Model_ip extends CI_Model
         return $this->db->get('ip')->row_array();
     }
 
+    public function descLastIp()
+    {
+        $this->db->select('*');
+        $this->db->order_by('id_ip', 'DESC');
+        $this->db->limit(1);
+        return $this->db->get('ip')->row_array();
+    }
+
     public function storeip()
     {
         $ip = $this->input->post('nama_ip');

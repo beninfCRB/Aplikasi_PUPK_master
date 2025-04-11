@@ -118,4 +118,13 @@ class Model_soal extends CI_Model
         $this->db->where('id_soal', $kode);
         $this->db->update('soal', $data);
     }
+
+    public function updateAutoSoal($tgl,$akhir){
+        $data = [
+            'status' => 'nonaktif',
+        ];
+        $this->db->where('tanggal', $tgl);
+        $this->db->where('wakhir', $akhir);
+        $this->db->update('soal', $data);
+    }
 }
