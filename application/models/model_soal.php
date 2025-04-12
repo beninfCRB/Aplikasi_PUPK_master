@@ -124,7 +124,7 @@ class Model_soal extends CI_Model
             'status' => 'nonaktif',
         ];
         $this->db->where('tanggal', $tgl);
-        $this->db->where('wakhir', $akhir);
+        $this->db->where('akhir', $akhir);
         $this->db->update('soal', $data);
     }
 }
