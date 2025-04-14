@@ -1,7 +1,7 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4">Data Laboratorium</h1>
+            <h1 class="mt-4">Data Ip Address</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active text-primary"><?= $bc . " / " . $title ?> / Ubah></li>
             </ol>
@@ -10,7 +10,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="ml-auto">
-                                <h4>Ubah Laboratorium</h4>
+                                <h4>Ubah Ip Address</h4>
                             </div>
                             <div class="ml-auto"><a class="btn btn-primary" href="<?= base_url('ip/showdata_ip'); ?>">
                                     <i class="fas fa-chevron-left"></i> Kembali </a>

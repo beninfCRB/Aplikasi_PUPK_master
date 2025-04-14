@@ -6,10 +6,11 @@ $tgl = date('Y-m-d');
 $string = '';
 $token_old = 0;
 
-if (!empty($token)) {
+if (is_array($token) && !empty($token)) {
+    foreach ($token as $token) {
         if ($token['id_token'] != $token_old) {
             $token_old = $token['id_token'];
-
+            if ($token['mulai'] <= date('H:i') && $token['akhir'] > date('H:i') && date('H:i') < $token['akhir']) {
                 $string = '<h1 class="text-danger">' . $token['nama_token'] . '</h1>';
 
                 $mulai = explode(':', $token['mulai']);
@@ -72,10 +73,12 @@ if (!empty($token)) {
         } elseif (date('H:i') >= $token['akhir']) {
             $id = $token['id_token'];
             $wkt = date('H:i');
-            $this->db->Model_token->updateToken($id);
-            $this->db->Model_soal->updateAutoSoal($tgl, $wkt);;
+            $this->db->query("UPDATE token SET status = 'nonaktif' WHERE id_token = '$id'");
+            $this->db->query("UPDATE soal SET status = 'nonaktif' WHERE tanggal = '$tgl' AND akhir = '$wkt' ");
         }
     }
+    }
+}
 ?>
 
 

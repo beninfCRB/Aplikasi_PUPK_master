@@ -10,7 +10,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="ml-auto">
-                                <h4>Ubah token Medis</h4>
+                                <h4>Ubah token</h4>
                             </div>
                             <div class="ml-auto"><a class="btn btn-primary" href="<?= base_url('token/showdata_token'); ?>">
                                     <i class="fas fa-chevron-left"></i> Kembali </a>
@@ -40,11 +40,11 @@
                                 <small class="form-text text-danger"><?= form_error('akhir'); ?></small>
                             </div>
                             <div class="form-group">
-                                <soalel for="status">Status</soalel>
+                                <label for="status">Status</label>
                                 <select class="form-control" type="text" name="status" id="status">
-                                    <option disabled value="#"><?= $token['status']; ?></option>
-                                    <option value="aktif">Aktif</option>
-                                    <option value="nonaktif">Nonaktif</option>
+                                <option disabled value="">Pilih Status</option>
+                                    <option value="aktif" <?= $token['status'] == 'aktif' ? 'selected' : ''; ?>>Aktif</option>
+                                    <option value="nonaktif" <?= $token['status'] == 'nonaktif' ? 'selected' : ''; ?>>Nonaktif</option>
                                 </select>
                                 <small class="form-text text-danger"><?= form_error('status'); ?></small>
                             </div>

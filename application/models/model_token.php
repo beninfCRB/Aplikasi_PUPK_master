@@ -41,8 +41,8 @@ class model_token extends CI_model
     {
         $date = date('Y-m-d');
         $time = date('H:i');
-        $query = "SELECT * FROM token WHERE status = 'aktif' AND tanggal = '$date' AND mulai <= '$time' AND akhir >= '$time' ORDER BY mulai ASC";
-        return $this->db->query($query)->row_array();
+        $query = "SELECT * FROM token WHERE status = 'aktif' AND tanggal = '$date'";
+        return $this->db->query($query)->result_array();
     }
 
     public function getaktif()

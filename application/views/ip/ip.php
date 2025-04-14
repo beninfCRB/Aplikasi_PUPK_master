@@ -17,7 +17,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="ml-auto">
-                            <h4>Data iporatorium</h4>
+                            <h4>Data Ip Address</h4>
                         </div>
                         <div class="ml-auto">
                             <a class="btn btn-primary" href="<?= base_url('ip/store_ip'); ?>">

@@ -39,11 +39,11 @@
                                 <small class="form-text text-danger"><?= form_error('akhir'); ?></small>
                             </div>
                             <div class="form-group">
-                                <soalel for="status">Status</soalel>
+                                <label for="status">Status</label>
                                 <select class="form-control" type="text" name="status" id="status">
-                                    <option selected disabled value="#"><?= $soal['status']; ?></option>
-                                    <option value="aktif">Aktif</option>
-                                    <option value="nonaktif">Nonaktif</option>
+                                    <option disabled value="">Pilih Status</option>
+                                    <option value="aktif" <?= $soal['status'] == 'aktif' ? 'selected' : ''; ?>>Aktif</option>
+                                    <option value="nonaktif" <?= $soal['status'] == 'nonaktif' ? 'selected' : ''; ?>>Nonaktif</option>
                                 </select>
                                 <small class="form-text text-danger"><?= form_error('status'); ?></small>
                             </div>

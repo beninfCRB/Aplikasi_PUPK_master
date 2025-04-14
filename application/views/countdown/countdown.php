@@ -30,6 +30,14 @@
             setTimeout("ajax()", 1000);
         }
     </script>
+    <style>
+        body {
+            background-image: url("../assets/img/bg-wood.jpg");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body onload="ajax()">
